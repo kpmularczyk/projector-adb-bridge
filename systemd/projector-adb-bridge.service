@@ -1,0 +1,15 @@
+[Unit]
+Description=Projector ADB Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=amanita
+WorkingDirectory=/opt/projector-adb-bridge
+ExecStart=/opt/projector-adb-bridge/venv/bin/python /opt/projector-adb-bridge/main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

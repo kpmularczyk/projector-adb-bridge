@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=simple
 User=amanita
 WorkingDirectory=/opt/projector-adb-bridge
-ExecStart=/opt/projector-adb-bridge/venv/bin/python /opt/projector-adb-bridge/main.py
+ExecStart=/opt/projector-adb-bridge/venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port 8080
 Restart=always
 RestartSec=10
 
